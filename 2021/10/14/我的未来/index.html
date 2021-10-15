@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+  <meta charset="UTF-8">
+  <meta 
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <meta 
+    http-equiv="X-UA-Compatible" 
+    content="ie=edge">
+  <meta 
+    name="theme-color" 
+    content="#fff" 
+    id="theme-color">
+  <meta 
+    name="description" 
+    content="胡佳豪的技术博客">
+  <link 
+    rel="icon" 
+    href="https://demo.theme-kaze.top/img/Kaze.png">
+  <title>本科升学的三种方式</title>
+  
+    
+      <meta 
+        property="og:title" 
+        content="本科升学的三种方式">
+    
+    
+      <meta 
+        property="og:url" 
+        content="https://scripterdoge.github.io/2021/10/14/%E6%88%91%E7%9A%84%E6%9C%AA%E6%9D%A5/index.html">
+    
+    
+      <meta 
+        property="og:img" 
+        content="https://demo.theme-kaze.top/img/Kaze.png">
+    
+    
+    
+      <meta 
+        property="og:type" 
+        content="article">
+      <meta 
+        property="og:article:published_time" 
+        content="2021-10-14">
+      <meta 
+        property="og:article:modified_time" 
+        content="2021-10-15">
+      <meta 
+        property="og:article:author" 
+        content="胡佳豪">
+      
+        
+      
+    
+  
+  <script>
+    function loadScript(url, cb) {
+      var script = document.createElement('script');
+      script.src = url;
+      if (cb) script.onload = cb;
+      script.async = true;
+      document.body.appendChild(script);
+    }
+    function loadCSS(href, data, attr) {
+      var sheet = document.createElement('link');
+      sheet.ref = 'stylesheet';
+      sheet.href = href;
+      sheet.dataset[data] = attr;
+      document.head.appendChild(sheet);
+    }
+    function changeCSS(cssFile, data, attr) {
+      var oldlink = document.querySelector(data);
+      var newlink = document.createElement("link");
+      newlink.setAttribute("rel", "stylesheet");
+      newlink.setAttribute("href", cssFile);
+      newlink.dataset.prism = attr;
+      document.head.replaceChild(newlink, oldlink);
+    }
+  </script>
+  
+    
+  
+  <script>
+    // control reverse button
+    var reverseDarkList = {
+      dark: 'light',
+      light: 'dark'
+    };
+    var themeColor = {
+      dark: '#1c1c1e',
+      light: '#fff'
+    }
+    // get the data of css prefers-color-scheme
+    var getCssMediaQuery = function() {
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    };
+    // reverse current darkmode setting function
+    var reverseDarkModeSetting = function() {
+      var setting = localStorage.getItem('user-color-scheme');
+      if(reverseDarkList[setting]) {
+        setting = reverseDarkList[setting];
+      } else if(setting === null) {
+        setting = reverseDarkList[getCssMediaQuery()];
+      } else {
+        return;
+      }
+      localStorage.setItem('user-color-scheme', setting);
+      return setting;
+    };
+    // apply current darkmode setting
+  </script>
+  
+    <script>
+      var setDarkmode = function(mode) {
+      var setting = mode || localStorage.getItem('user-color-scheme');
+      if(setting === getCssMediaQuery()) {
+        document.documentElement.removeAttribute('data-user-color-scheme');
+        localStorage.removeItem('user-color-scheme');
+        document.getElementById('theme-color').content = themeColor[setting];
+        document.getElementById('theme-color').dataset.mode = setting;
+      } else if(reverseDarkList[setting]) {
+        document.documentElement.setAttribute('data-user-color-scheme', setting);
+        document.getElementById('theme-color').content = themeColor[setting];
+        document.getElementById('theme-color').dataset.mode = setting;
+      } else {
+        document.documentElement.removeAttribute('data-user-color-scheme');
+        localStorage.removeItem('user-color-scheme');
+        document.getElementById('theme-color').content = themeColor[getCssMediaQuery()];
+        document.getElementById('theme-color').dataset.mode = getCssMediaQuery();
+      }
+    };
+    setDarkmode();
+    </script>
+  
+  
+  <link rel="preload" href="//at.alicdn.com/t/font_1946621_i1kgafibvw.css" as="style" >
+  <link rel="preload" href="//at.alicdn.com/t/font_1952792_89b4ac4k4up.css" as="style" >
+  
+  
+    <link rel="preload" href="/js/lib/lightbox/baguetteBox.min.js" as="script">
+    <link rel="preload" href="/js/lib/lightbox/baguetteBox.min.css" as="style" >
+  
+  
+    <link rel="preload" href="/js/lib/lozad.min.js" as="script">
+  
+  
+  
+  
+  
+    
+    <link rel="prefetch" href="//unpkg.com/valine/dist/Valine.min.js" as="script">
+  
+  
+  
+  <link rel="stylesheet" href="/css/main.css">
+  
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1946621_i1kgafibvw.css">
+  
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1952792_89b4ac4k4up.css">
+  
+    <link rel="stylesheet" href="/js/lib/lightbox/baguetteBox.min.css">
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+  <body>
+    <div class="wrapper">
+       
+      <nav class="navbar">
+  <div class="navbar-logo">
+    <span class="navbar-logo-main">
+      
+        <img 
+          class="navbar-logo-img"
+          width="32"
+          height="32"
+          src="https://demo.theme-kaze.top/img/Kaze.png" 
+          alt="blog logo">
+      
+      <span class="navbar-logo-dsc">胡佳豪的博客</span>
+    </span>
+  </div>
+  <div class="navbar-menu">
+    
+      <a 
+        href="/" 
+        class="navbar-menu-item">
+        
+          首页
+        
+      </a>
+    
+      <a 
+        href="/archives" 
+        class="navbar-menu-item">
+        
+          归档
+        
+      </a>
+    
+      <a 
+        href="/tags" 
+        class="navbar-menu-item">
+        
+          标签
+        
+      </a>
+    
+      <a 
+        href="/categories" 
+        class="navbar-menu-item">
+        
+          分类
+        
+      </a>
+    
+      <a 
+        href="/about" 
+        class="navbar-menu-item">
+        
+          关于
+        
+      </a>
+    
+      <a 
+        href="/links" 
+        class="navbar-menu-item">
+        
+          友链
+        
+      </a>
+    
+    <a 
+      class="navbar-menu-item darknavbar" 
+      id="dark">
+      <i class="iconfont icon-weather"></i>
+    </a>
+    <a 
+      class="navbar-menu-item searchnavbar" 
+      id="search">
+      <i 
+        class="iconfont icon-search" 
+        style="font-size: 1.2rem; font-weight: 400;">
+      </i>
+    </a>
+  </div>
+</nav> 
+      
+      <div 
+        id="local-search" 
+        style="display: none">
+        <input
+          class="navbar-menu-item"
+          id="search-input"
+          placeholder="请输入搜索内容..." />
+        <div id="search-content"></div>
+      </div>
+      
+      <div class="section-wrap">
+        <div class="container">
+          <div class="columns">
+            <main class="main-column">
+<article class="card card-content">
+  <header>
+    <h1 class="post-title">
+      本科升学的三种方式
+    </h1>
+  </header>
+  <div class="post-meta post-show-meta">
+    <time datetime="2021-10-14T05:51:09.000Z">
+      <i 
+        class="iconfont icon-calendar" 
+        style="margin-right: 2px;">
+      </i>
+      <span>2021-10-14</span>
+    </time>
+    
+    
+      <span class="dot"></span>
+      <span>1.1k 字</span>
+    
+  </div>
+  
+  </header>
+  <div 
+    id="section" 
+    class="post-content">
+    <h2 id="大四老油条的感言"><a href="#大四老油条的感言" class="headerlink" title="大四老油条的感言"></a>大四老油条的感言</h2><p>转眼间，我已经大四了。临近毕业的时候，我打开了3年前的大学录取通知书，仿佛还是昨日。哈哈哈，人生或许就是浮生一梦，每个人的起点和终点都是一样的，但个中过程却是千姿百态。最近有一些学弟学妹对未来感到迷茫和彷徨，时不时向我求助人生规划问题。我想就趁着这个机会，简单说说我的个人看法吧。</p>
+<h2 id="保研-or-考研-or-留学"><a href="#保研-or-考研-or-留学" class="headerlink" title="保研 or 考研 or 留学"></a>保研 or 考研 or 留学</h2><h3 id="一、保研"><a href="#一、保研" class="headerlink" title="一、保研"></a>一、保研</h3><p>小生不才，在校期间有过一段科研经历，主要研究方向是隐私计算，大白话讲，就是如何让商家在未得到授权前提下，使用个人数据的同时无法提取出具体的数据。说来有些尴尬，这个组里只有我一个人，而且指导老师也是这个领域的萌新，于是我便是那个冲锋陷阵的大头兵了&gt;_&lt;。在那一年中，我独自完成了项目背景调研，方案设计，实验实现以及论文和项目申请书的撰写，确实十分辛苦。所以我想告诉各位学弟学妹，国内研究生的生活更多是一个人去探索未知领域的阶段，而且具体方向往往是由老师指定的，所以会出现硕士毕业后由于研究方向较为冷门，所以无法找到心仪工作的情况，所以各位学弟学妹在决定国内读研并参加工作后，要同时完成老师布置的科研任务和职场技能的培养。因为我的成绩靠后，最后才确定名额，只能保研本校，但是我放弃了，因为我已经有过本校做科研的体验了，拥有过就够了,哈哈哈！</p>
+<h3 id="二、考研"><a href="#二、考研" class="headerlink" title="二、考研"></a>二、考研</h3><p>有考虑过考研，我认为是否选择考研和以下几个因素有关：</p>
+<ol>
+<li>第一学历</li>
+<li>科研兴趣</li>
+<li>导师</li>
+<li>城市满意度</li>
+<li>工作机会</li>
+<li>意向院校专业的竞争压力</li>
+</ol>
+<p>各位学弟学妹可以朝着这些方向去思考当前的环境是否值得去考研。另外我想唠叨一下，计算机研发岗的很多职位并不需要研究生学历，如前端、后端、测试、安全研究员等。不过一个硕士学历可以保证自己有更多的退路，如参加工作后受不了996，可以选择去发达地区的研究院继续从事研究工作，亦或是去某些国企事业单位享受work life balance。</p>
+<h3 id="三、-留学"><a href="#三、-留学" class="headerlink" title="三、 留学"></a>三、 留学</h3><p>个人觉得如果你成绩很好，有论文，而且家里能提供足够的资金支持。无疑去老美的top30大学留学是最好的。国外的研究型硕士一般是两年学制，而且能提供远超国内大多数学校的科研环境，我能想到的缺点只有高昂的学费和生活费了（留下了贫穷的泪水）</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>学弟学妹们可以多去尝试，无论是科研还是工作。科研的尝试机会其实很多，据我所知很多学校的很多老师都缺人，大胆去发邮件套磁，国内国外都试一下，多发几个，总有一个成功。实习的话也是一段很不错的经历。其实在国外，老师会认为实习经历和成绩是同一个level的，事后想读书了拿着工资去美帝留学也是很香的，此外拥有一段实习经历也能更好的帮助自己找准定位。对于我来说，更喜欢实习过程中迅速解决实际存在问题的快感，科研的生效周期还是太长了(我好浮躁啊，哇咔咔)。如果各位学弟学妹目前正处在一个如何艰难的阶段，我觉得比起被动焦虑，还是主动出击更来得实际。<strong>冬泳怪鸽曾说过“我们无论遇到什么困难，都不要害怕，微笑着面对它，战胜恐惧的最好方法是面对恐惧，加油，奥利给！”</strong></p>
+
+  </div>
+  <div>
+    
+      <div 
+        class="post-note note-warning copyright" 
+        style="margin-top: 42px">
+        <p>
+          <span style="font-weight: bold;">作者：</span><a 
+            target="_blank" 
+            rel="nofollow noopener noreferrer" 
+            href="/about">
+            胡佳豪
+          </a>
+        </p>
+        <p>
+          <span style="font-weight: bold;">文章链接：</span><a 
+            target="_blank" 
+            rel="nofollow noopener noreferrer" 
+            href="https://scripterdoge.github.io/2021/10/14/%E6%88%91%E7%9A%84%E6%9C%AA%E6%9D%A5/">
+            https://scripterdoge.github.io/2021/10/14/%E6%88%91%E7%9A%84%E6%9C%AA%E6%9D%A5/
+          </a>
+        </p>
+        <p><span style="font-weight: bold;">版权声明：</span>本博客所有文章除特别声明外，均采用<a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0 协议</a>。转载请注明出处！</p>
+      </div>
+    
+  </div>
+</article>
+<div class="nav">
+  
+  
+    <div class="nav-item-next">
+      <a 
+        href="/2021/10/07/%E8%8F%9C%E8%8F%9C%E5%92%8C%E7%8B%97%E7%8B%97%E7%9A%84%E6%95%85%E4%BA%8B-1/" 
+        class="nav-link">
+        <div>
+          <div class="nav-label">下一篇</div>
+          
+            <div class="nav-title">菜菜和gogo的故事(1) </div>
+          
+        </div>
+        <i class="iconfont icon-right nav-next-icon"></i>
+      </a>
+    </div>
+  
+</div>
+
+  <div 
+    class="card card-content comment-card" 
+    style="margin-top: 16px;">
+    <div class="comment-card-title">评论</div>
+    
+  <div id="vcomments"></div>
+  
+  <script>
+    loadScript("//unpkg.com/valine/dist/Valine.min.js");
+    var oldLoadVa = window.onload;
+    window.onload = function () {
+      oldLoadVa && oldLoadVa();
+      new Valine({
+        el: '#vcomments',
+        appId: 'LALcJ6fQrHNL90vv3RrIQkXk-gzGzoHsz',
+        appKey: 'ADC3V1WquSpQow3wKlQuvdrV',
+        placeholder: 'Tell me your opinion ^_^',
+        path: window.location.pathname,
+        avatar: 'mp',
+        meta: ["nick","mail"],
+        pageSize: '10',
+        lang: '',
+        visitor: 'false',
+        highlight: true,
+        recordIP: false,
+        
+        
+        
+        enableQQ: 'false',
+        requiredFields: [],
+      });
+    };
+  </script>
+
+  </div>
+
+<div 
+  class="card card-content toc-card" 
+  id="mobiletoc">
+  <div class="toc-header">
+  <i 
+    class="iconfont icon-menu" 
+    style="padding-right: 2px;">
+  </i>目录
+</div>
+<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%A7%E5%9B%9B%E8%80%81%E6%B2%B9%E6%9D%A1%E7%9A%84%E6%84%9F%E8%A8%80"><span class="toc-text">大四老油条的感言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%9D%E7%A0%94-or-%E8%80%83%E7%A0%94-or-%E7%95%99%E5%AD%A6"><span class="toc-text">保研 or 考研 or 留学</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E4%BF%9D%E7%A0%94"><span class="toc-text">一、保研</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E8%80%83%E7%A0%94"><span class="toc-text">二、考研</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E3%80%81-%E7%95%99%E5%AD%A6"><span class="toc-text">三、 留学</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a></li></ol>
+</div></main>
+            <aside class="left-column">
+              
+              <div class="card card-author">
+                
+  <img 
+    src="https://demo.theme-kaze.top/img/Kaze.png" 
+    class="author-img"
+    width="88"
+    height="88"
+    alt="author avatar">
+
+<p class="author-name">胡佳豪</p>
+<p class="author-description">一个安全专业出身的头发茂密的小伙</p>
+<div class="author-message">
+  <a 
+    class="author-posts-count" 
+    href="/archives">
+    <span>3</span>
+    <span>文章</span>
+  </a>
+  <a 
+    class="author-categories-count" 
+    href="/categories">
+    <span>0</span>
+    <span>分类</span>
+  </a>
+  <a 
+    class="author-tags-count" 
+    href="/tags">
+    <span>1</span>
+    <span>标签</span>
+  </a>
+</div>
+
+  <div class="author-card-society">
+    
+      <div class="author-card-society-icon">
+        <a target="_blank" rel="noopener" href="https://github.com/Scripterdoge">
+          <i class="iconfont icon-github society-icon"></i>
+        </a>
+      </div>
+    
+      <div class="author-card-society-icon">
+        <a target="_blank" rel="noopener" href="https://space.bilibili.com/299097926?spm_id_from=333.33.b_73656375726974794f75744c696e6b.1">
+          <i class="iconfont icon-bilibili society-icon"></i>
+        </a>
+      </div>
+    
+      <div class="author-card-society-icon">
+        <a href="mailto:scripter_doge@163.com">
+          <i class="iconfont icon-mail society-icon"></i>
+        </a>
+      </div>
+    
+      <div class="author-card-society-icon">
+        <a target="_blank" rel="noopener" href="https://steamcommunity.com/profiles/76561198984533886/">
+          <i class="iconfont icon-steam society-icon"></i>
+        </a>
+      </div>
+    
+  </div>
+
+              </div>
+               <div class="sticky-tablet">
+  
+  
+    <article class="display-when-two-columns spacer">
+      <div class="card card-content toc-card">
+        <div class="toc-header">
+  <i 
+    class="iconfont icon-menu" 
+    style="padding-right: 2px;">
+  </i>目录
+</div>
+<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%A7%E5%9B%9B%E8%80%81%E6%B2%B9%E6%9D%A1%E7%9A%84%E6%84%9F%E8%A8%80"><span class="toc-text">大四老油条的感言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%9D%E7%A0%94-or-%E8%80%83%E7%A0%94-or-%E7%95%99%E5%AD%A6"><span class="toc-text">保研 or 考研 or 留学</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E4%BF%9D%E7%A0%94"><span class="toc-text">一、保研</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E8%80%83%E7%A0%94"><span class="toc-text">二、考研</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E3%80%81-%E7%95%99%E5%AD%A6"><span class="toc-text">三、 留学</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a></li></ol>
+      </div>
+    </article>
+  
+  
+  <article class="card card-content categories-widget">
+    <div class="categories-card">
+  <div class="categories-header">
+    <i 
+      class="iconfont icon-fenlei" 
+      style="padding-right: 2px;">
+    </i>分类
+  </div>
+  <div class="categories-list">
+    
+  </div>
+</div>
+  </article>
+  
+  <article class="card card-content tags-widget">
+    <div class="tags-card">
+  <div class="tags-header">
+    <i 
+      class="iconfont icon-biaoqian" 
+      style="padding-right: 2px;">
+    </i>热门标签
+  </div>
+  <div class="tags-list">
+    
+      <a 
+        href="/tags/%E6%A0%91%E6%B4%9E%E6%9D%82%E8%B0%88/" 
+        title="树洞杂谈">
+        <div class="tags-list-item">树洞杂谈</div>
+      </a>
+    
+  </div>
+</div>
+  </article>
+  
+  
+</div>
+            </aside>
+            <aside class="right-column">
+              <div class="sticky-widescreen">
+  
+  
+    <article class="card card-content toc-card">
+      <div class="toc-header">
+  <i 
+    class="iconfont icon-menu" 
+    style="padding-right: 2px;">
+  </i>目录
+</div>
+<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%A7%E5%9B%9B%E8%80%81%E6%B2%B9%E6%9D%A1%E7%9A%84%E6%84%9F%E8%A8%80"><span class="toc-text">大四老油条的感言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%9D%E7%A0%94-or-%E8%80%83%E7%A0%94-or-%E7%95%99%E5%AD%A6"><span class="toc-text">保研 or 考研 or 留学</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E4%BF%9D%E7%A0%94"><span class="toc-text">一、保研</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E8%80%83%E7%A0%94"><span class="toc-text">二、考研</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E3%80%81-%E7%95%99%E5%AD%A6"><span class="toc-text">三、 留学</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a></li></ol>
+    </article>
+  
+  
+  <article class="card card-content">
+    <div class="recent-posts-card">
+  <div class="recent-posts-header">
+    <i 
+      class="iconfont icon-wenzhang_huaban" 
+      style="padding-right: 2px;">
+    </i>最近文章
+  </div>
+  <div class="recent-posts-list">
+    
+      <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2021-10-14</div>
+        <a href="/2021/10/14/%E6%88%91%E7%9A%84%E6%9C%AA%E6%9D%A5/"><div class="recent-posts-item-content">本科升学的三种方式</div></a>
+      </div>
+    
+      <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2021-10-07</div>
+        <a href="/2021/10/07/%E8%8F%9C%E8%8F%9C%E5%92%8C%E7%8B%97%E7%8B%97%E7%9A%84%E6%95%85%E4%BA%8B-1/"><div class="recent-posts-item-content">菜菜和gogo的故事(1)</div></a>
+      </div>
+    
+      <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2021-10-04</div>
+        <a href="/2021/10/04/test/"><div class="recent-posts-item-content">我的博客设计之道</div></a>
+      </div>
+    
+  </div>
+</div>
+  </article>
+  
+  
+</div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </div>
+     
+    <footer class="footer">
+  <div class="footer-container">
+    <div>
+      <div class="footer-dsc">
+        <span>
+          Copyright ©
+          
+            2020 -
+          
+          2021
+        </span>
+        &nbsp;
+        <a 
+          href="/" 
+          class="footer-link">
+          胡佳豪的博客
+        </a>
+      </div>
+    </div>
+
+    
+    
+    
+    
+      <div class="footer-dsc">
+        
+          本站总访问量<span id="busuanzi_value_site_pv"></span>次
+        
+        
+          <span>&nbsp;|&nbsp;</span>
+        
+        
+          本站总访客数<span id="busuanzi_value_site_uv"></span>次
+        
+      </div>
+      
+    
+</footer> 
+    
+  <a 
+    role="button" 
+    id="scrollbutton" 
+    class="basebutton" 
+    aria-label="回到顶部">
+    <i class="iconfont icon-arrowleft button-icon"></i>
+  </a>
+
+<a 
+  role="button" 
+  id="menubutton"
+  aria-label="menu button"
+  class="basebutton">
+  <i class="iconfont icon-menu button-icon"></i>
+</a>
+<a 
+  role="button" 
+  id="popbutton" 
+  class="basebutton" 
+  aria-label="控制中心">
+  <i class="iconfont icon-expand button-icon"></i>
+</a>
+<a 
+  role="button" 
+  id="darkbutton" 
+  class="basebutton darkwidget" 
+  aria-label="夜色模式">
+  <i class="iconfont icon-weather button-icon"></i>
+</a>
+<a 
+  role="button" 
+  id="searchbutton" 
+  class="basebutton searchwidget" 
+  aria-label="搜索">
+  <i class="iconfont icon-search button-icon"></i>
+</a> 
+     
+     
+     
+      <script>
+  var addImgLayout = function () {
+    var img = document.querySelectorAll('.post-content img')
+    var i
+    for (i = 0; i < img.length; i++) {
+      var wrapper = document.createElement('a')
+      wrapper.setAttribute('href', img[i].getAttribute('data-src'))
+      wrapper.setAttribute('aria-label', 'illustration')
+      wrapper.style.cssText =
+        'width: 100%; display: flex; justify-content: center;'
+      if (img[i].alt) wrapper.dataset.caption = img[i].alt
+      wrapper.dataset.nolink = true
+      img[i].before(wrapper)
+      wrapper.append(img[i])
+      var divWrap = document.createElement('div')
+      divWrap.classList.add('gallery')
+      wrapper.before(divWrap)
+      divWrap.append(wrapper)
+    }
+    baguetteBox.run('.gallery')
+  }
+</script>
+<script>
+  loadScript(
+    "/js/lib/lightbox/baguetteBox.min.js",
+    addImgLayout
+  )
+</script>
+ 
+     
+     
+    <script src="/js/main.js"></script> 
+    
+      <script> 
+        loadScript('/js/lib/busuanzi.min.js') 
+      </script>
+     
+    
+      <script>
+        var addLazyload = function () {
+          var observer = lozad('.lozad', {
+            load: function (el) {
+              el.srcset = el.getAttribute('data-src')
+            },
+            loaded: function (el) {
+              el.classList.add('loaded')
+            },
+          })
+          observer.observe()
+        }
+      </script>
+      <script>
+        loadScript('/js/lib/lozad.min.js', addLazyload)
+      </script>
+     
+    
+    
+  </body>
+</html>
