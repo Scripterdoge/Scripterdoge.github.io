@@ -18,17 +18,17 @@
   <link 
     rel="icon" 
     href="https://demo.theme-kaze.top/img/Kaze.png">
-  <title>归档</title>
+  <title>Hackergame_2021_wp</title>
   
     
       <meta 
         property="og:title" 
-        content="归档">
+        content="Hackergame_2021_wp">
     
     
       <meta 
         property="og:url" 
-        content="https://scripterdoge.github.io/archives/index.html">
+        content="https://scripterdoge.github.io/2021/10/31/Hackergame-2021-wp/index.html">
     
     
       <meta 
@@ -36,6 +36,22 @@
         content="https://demo.theme-kaze.top/img/Kaze.png">
     
     
+    
+      <meta 
+        property="og:type" 
+        content="article">
+      <meta 
+        property="og:article:published_time" 
+        content="2021-10-31">
+      <meta 
+        property="og:article:modified_time" 
+        content="2021-11-01">
+      <meta 
+        property="og:article:author" 
+        content="胡佳豪">
+      
+        
+      
     
   
   <script>
@@ -177,6 +193,8 @@
   
   <link rel="stylesheet" href="//at.alicdn.com/t/font_1952792_89b4ac4k4up.css">
   
+    <link rel="stylesheet" href="/js/lib/lightbox/baguetteBox.min.css">
+  
 <meta name="generator" content="Hexo 5.4.0"></head>
 
   <body>
@@ -276,113 +294,137 @@
         <div class="container">
           <div class="columns">
             <main class="main-column">
-<div class="card card-content">
-  <h1 class="widget-title">归档</h1>
-</div>
-<div class="archive-timeline">
-  
-  
+<article class="card card-content">
+  <header>
+    <h1 class="post-title">
+      Hackergame_2021_wp
+    </h1>
+  </header>
+  <div class="post-meta post-show-meta">
+    <time datetime="2021-10-31T12:02:23.000Z">
+      <i 
+        class="iconfont icon-calendar" 
+        style="margin-right: 2px;">
+      </i>
+      <span>2021-10-31</span>
+    </time>
     
-      <div class="archive-timeline-tag"><span>2021</span></div>
-      
     
-    <div class="archive-timeline-item">
-      <div class="archive-timeline-post">
-        <div class="card card-content">
-          <div class="archive-timeline-post-date">2021-10-31</div>
-          <div class="archive-timeline-post-content">
-            <a 
-              href="/2021/10/31/Hackergame-2021-wp/"
-              class="archive-timeline-post-item">
-              Hackergame_2021_wp
-            </a>
-          </div>
-        </div>
+      <span class="dot"></span>
+      <span>379 字</span>
+    
+  </div>
+  
+  </header>
+  <div 
+    id="section" 
+    class="post-content">
+    <p>Hackergame 是由中国科学技术大学举办的线上CTF竞赛，截止2021年，已经连续举办过八届。近几年来每届有<code>3000人</code>以上参与其中，其中不乏硕士、博士、乃至信息安全职业圈选手的身影。这次我在西电的排名是<code>第4名</code>，虽然拿了<code>二等奖</code>，还是感慨与头部选手的差距明显😐。</p>
+<p>【摆一张排名截图】</p>
+<p>然排名固然重要，但解题过程中不断学习新知识，自我探索求解，打通任督二脉的过程才是最酣畅的。Hackergame就是这样一场神奇的比赛，能让参赛者在解题的过程中欲罢不能，这里引一下GZTime大佬的<a target="_blank" rel="noopener" href="https://blog.gztime.cc/posts/2021/9f04efbd/#Summary" title="博客">博客</a>。话不多说，下面让我来带大家爽爽。</p>
+<h1 id="签到"><a href="#签到" class="headerlink" title="签到"></a>签到</h1><blockquote>
+<p>为了能让大家顺利签到，命题组把每一秒的 flag 都记录下来制成了日记本的一页。你只需要打开日记，翻到 Hackergame 2021 比赛进行期间的任何一页就能得到 flag！</p>
+</blockquote>
+<p>进入页面，发现<code>1970-01-01</code>这个神奇的日子。</p>
+<pre><code>      图1
+         
+         
+</code></pre>
+<p>没错，计算机中的时间戳正是从这时候开始以秒为单位递增的。点击<strong>Next</strong>从<strong>url</strong>中可以看到是通过<strong>GET方式</strong>提交变量实现页面跳转的。因此只要查询到比赛时间段内的时间戳，以GET方式提交就可以拿到flag。linux中查询指定时间点的方式：</p>
+<pre class="line-numbers language-python" data-language="python"><div class="caption"><span>[nihao]</span></div><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'hello'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+  </div>
+  <div>
+    
+      <div 
+        class="post-note note-warning copyright" 
+        style="margin-top: 42px">
+        <p>
+          <span style="font-weight: bold;">作者：</span><a 
+            target="_blank" 
+            rel="nofollow noopener noreferrer" 
+            href="/about">
+            胡佳豪
+          </a>
+        </p>
+        <p>
+          <span style="font-weight: bold;">文章链接：</span><a 
+            target="_blank" 
+            rel="nofollow noopener noreferrer" 
+            href="https://scripterdoge.github.io/2021/10/31/Hackergame-2021-wp/">
+            https://scripterdoge.github.io/2021/10/31/Hackergame-2021-wp/
+          </a>
+        </p>
+        <p><span style="font-weight: bold;">版权声明：</span>本博客所有文章除特别声明外，均采用<a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0 协议</a>。转载请注明出处！</p>
       </div>
-    </div>
-  
     
-    <div class="archive-timeline-item">
-      <div class="archive-timeline-post">
-        <div class="card card-content">
-          <div class="archive-timeline-post-date">2021-10-21</div>
-          <div class="archive-timeline-post-content">
-            <a 
-              href="/2021/10/21/win11-%E7%9A%84%E4%B8%80%E4%BA%9BBug/"
-              class="archive-timeline-post-item">
-              win11 体检报告
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
+  </div>
+</article>
+<div class="nav">
   
-    
-    <div class="archive-timeline-item">
-      <div class="archive-timeline-post">
-        <div class="card card-content">
-          <div class="archive-timeline-post-date">2021-10-20</div>
-          <div class="archive-timeline-post-content">
-            <a 
-              href="/2021/10/20/CTF%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90%E5%A4%A7%E6%B1%87%E6%80%BB/"
-              class="archive-timeline-post-item">
-              计算机安全学习资源大汇总
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
   
-    
-    <div class="archive-timeline-item">
-      <div class="archive-timeline-post">
-        <div class="card card-content">
-          <div class="archive-timeline-post-date">2021-10-14</div>
-          <div class="archive-timeline-post-content">
-            <a 
-              href="/2021/10/14/%E6%88%91%E7%9A%84%E6%9C%AA%E6%9D%A5/"
-              class="archive-timeline-post-item">
-              本科升学的三种方式
-            </a>
-          </div>
+    <div class="nav-item-next">
+      <a 
+        href="/2021/10/21/win11-%E7%9A%84%E4%B8%80%E4%BA%9BBug/" 
+        class="nav-link">
+        <div>
+          <div class="nav-label">下一篇</div>
+          
+            <div class="nav-title">win11 体检报告 </div>
+          
         </div>
-      </div>
-    </div>
-  
-    
-    <div class="archive-timeline-item">
-      <div class="archive-timeline-post">
-        <div class="card card-content">
-          <div class="archive-timeline-post-date">2021-10-07</div>
-          <div class="archive-timeline-post-content">
-            <a 
-              href="/2021/10/07/%E8%8F%9C%E8%8F%9C%E5%92%8C%E7%8B%97%E7%8B%97%E7%9A%84%E6%95%85%E4%BA%8B-1/"
-              class="archive-timeline-post-item">
-              菜菜和gogo的故事(1)
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  
-    
-    <div class="archive-timeline-item">
-      <div class="archive-timeline-post">
-        <div class="card card-content">
-          <div class="archive-timeline-post-date">2021-10-04</div>
-          <div class="archive-timeline-post-content">
-            <a 
-              href="/2021/10/04/test/"
-              class="archive-timeline-post-item">
-              我的博客设计之道
-            </a>
-          </div>
-        </div>
-      </div>
+        <i class="iconfont icon-right nav-next-icon"></i>
+      </a>
     </div>
   
 </div>
-</main>
+
+  <div 
+    class="card card-content comment-card" 
+    style="margin-top: 16px;">
+    <div class="comment-card-title">评论</div>
+    
+  <div id="vcomments"></div>
+  
+  <script>
+    loadScript("//unpkg.com/valine/dist/Valine.min.js");
+    var oldLoadVa = window.onload;
+    window.onload = function () {
+      oldLoadVa && oldLoadVa();
+      new Valine({
+        el: '#vcomments',
+        appId: 'LALcJ6fQrHNL90vv3RrIQkXk-gzGzoHsz',
+        appKey: 'ADC3V1WquSpQow3wKlQuvdrV',
+        placeholder: 'Tell me your opinion ^_^',
+        path: window.location.pathname,
+        avatar: 'mp',
+        meta: ["nick","mail"],
+        pageSize: '10',
+        lang: '',
+        visitor: 'false',
+        highlight: true,
+        recordIP: false,
+        
+        
+        
+        enableQQ: 'false',
+        requiredFields: [],
+      });
+    };
+  </script>
+
+  </div>
+
+<div 
+  class="card card-content toc-card" 
+  id="mobiletoc">
+  <div class="toc-header">
+  <i 
+    class="iconfont icon-menu" 
+    style="padding-right: 2px;">
+  </i>目录
+</div>
+<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AD%BE%E5%88%B0"><span class="toc-text">签到</span></a></li></ol>
+</div></main>
             <aside class="left-column">
               
               <div class="card card-author">
@@ -449,6 +491,18 @@
                <div class="sticky-tablet">
   
   
+    <article class="display-when-two-columns spacer">
+      <div class="card card-content toc-card">
+        <div class="toc-header">
+  <i 
+    class="iconfont icon-menu" 
+    style="padding-right: 2px;">
+  </i>目录
+</div>
+<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AD%BE%E5%88%B0"><span class="toc-text">签到</span></a></li></ol>
+      </div>
+    </article>
+  
   
   <article class="card card-content categories-widget">
     <div class="categories-card">
@@ -485,61 +539,21 @@
   </article>
   
   
-    <article class="card card-content widescreen-archive archive-widget">
-      <div class="archive-card">
-  <div class="archive-card-header">
-    <i 
-      class="iconfont icon-wodebaobiao" 
-      style="padding-right: 2px;">
-    </i>归档
-  </div>
-  <div class="archive-card-list">
-    
-    
-    
-      
-        
-        
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-    
-      <a 
-        href="/archives/2021" 
-        class="archive-card-list-item">
-        2021
-        <span class="archive-card-list-item-badge">6</span>
-      </a>
-    
-  </div>
-</div>
-    </article>
-  
 </div>
             </aside>
             <aside class="right-column">
               <div class="sticky-widescreen">
   
+  
+    <article class="card card-content toc-card">
+      <div class="toc-header">
+  <i 
+    class="iconfont icon-menu" 
+    style="padding-right: 2px;">
+  </i>目录
+</div>
+<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AD%BE%E5%88%B0"><span class="toc-text">签到</span></a></li></ol>
+    </article>
   
   
   <article class="card card-content">
@@ -576,56 +590,6 @@
 </div>
   </article>
   
-  
-    <article class="card card-content">
-      <div class="archive-card">
-  <div class="archive-card-header">
-    <i 
-      class="iconfont icon-wodebaobiao" 
-      style="padding-right: 2px;">
-    </i>归档
-  </div>
-  <div class="archive-card-list">
-    
-    
-    
-      
-        
-        
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-    
-      <a 
-        href="/archives/2021" 
-        class="archive-card-list-item">
-        2021
-        <span class="archive-card-list-item-badge">6</span>
-      </a>
-    
-  </div>
-</div>
-    </article>
   
 </div>
             </aside>
@@ -711,6 +675,36 @@
 </a> 
      
      
+     
+      <script>
+  var addImgLayout = function () {
+    var img = document.querySelectorAll('.post-content img')
+    var i
+    for (i = 0; i < img.length; i++) {
+      var wrapper = document.createElement('a')
+      wrapper.setAttribute('href', img[i].getAttribute('data-src'))
+      wrapper.setAttribute('aria-label', 'illustration')
+      wrapper.style.cssText =
+        'width: 100%; display: flex; justify-content: center;'
+      if (img[i].alt) wrapper.dataset.caption = img[i].alt
+      wrapper.dataset.nolink = true
+      img[i].before(wrapper)
+      wrapper.append(img[i])
+      var divWrap = document.createElement('div')
+      divWrap.classList.add('gallery')
+      wrapper.before(divWrap)
+      divWrap.append(wrapper)
+    }
+    baguetteBox.run('.gallery')
+  }
+</script>
+<script>
+  loadScript(
+    "/js/lib/lightbox/baguetteBox.min.js",
+    addImgLayout
+  )
+</script>
+ 
      
      
     <script src="/js/main.js"></script> 
