@@ -18,12 +18,12 @@
   <link 
     rel="icon" 
     href="https://demo.theme-kaze.top/img/Kaze.png">
-  <title>Hackergame_2021_wp</title>
+  <title>Hackergame_2021_wp (一)</title>
   
     
       <meta 
         property="og:title" 
-        content="Hackergame_2021_wp">
+        content="Hackergame_2021_wp (一)">
     
     
       <meta 
@@ -45,7 +45,7 @@
         content="2021-10-31">
       <meta 
         property="og:article:modified_time" 
-        content="2021-11-04">
+        content="2021-11-07">
       <meta 
         property="og:article:author" 
         content="胡佳豪">
@@ -146,6 +146,9 @@
   
   
   
+  
+    
+    <link rel="prefetch" href="//cdn.jsdelivr.net/npm/mathjax@3.0.5/es5/tex-svg.js" as="script">
   
   
     
@@ -263,7 +266,7 @@
 <article class="card card-content">
   <header>
     <h1 class="post-title">
-      Hackergame_2021_wp
+      Hackergame_2021_wp (一)
     </h1>
   </header>
   <div class="post-meta post-show-meta">
@@ -286,33 +289,26 @@
     id="section" 
     class="post-content">
     <p>Hackergame 是由中国科学技术大学举办的线上CTF竞赛，截止2021年，已经连续举办过八届。近几年来每届有 <strong>3000人</strong> 以上参与其中，其中不乏硕士、博士、乃至信息安全职业圈选手的身影。这次我在西电的排名是 <strong>第4名</strong> ，虽然拿了 <strong>二等奖</strong> ，还是感慨与头部选手的差距明显😐。</p>
-<p>【摆一张排名截图】</p>
-<p>然排名固然重要，但解题过程中不断学习新知识，自我探索求解，打通任督二脉的过程才是最酣畅的。Hackergame就是这样一场神奇的比赛，能让参赛者在解题的过程中欲罢不能，这里引一下GZTime大佬的<a target="_blank" rel="noopener" href="https://blog.gztime.cc/posts/2021/9f04efbd/#Summary" title="博客">博客</a>。话不多说，下面请看官方题解。</p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/IldFe0"><img src="https://z3.ax1x.com/2021/11/07/IldFe0.png" alt="IldFe0.png" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://z3.ax1x.com/2021/11/07/IldFe0.png" class="lozad post-image"></a></p>
+<p>然排名固然重要，但解题过程中不断学习新知识，自我探索求解，打通任督二脉的过程才是最酣畅的。Hackergame就是这样一场神奇的比赛，能让参赛者在解题的过程中欲罢不能，这里引一下GZTime大佬的<a target="_blank" rel="noopener" href="https://blog.gztime.cc/posts/2021/9f04efbd/#Summary" title="博客">博客</a>。话不多说，下面请看我的第一弹wp。</p>
 <h1 id="签到"><a href="#签到" class="headerlink" title="签到"></a>签到</h1><blockquote>
 <p>为了能让大家顺利签到，命题组把每一秒的 flag 都记录下来制成了日记本的一页。你只需要打开日记，翻到 Hackergame 2021 比赛进行期间的任何一页就能得到 flag！</p>
 </blockquote>
 <p>进入页面，发现<code>1970-01-01</code>这个神奇的日子。</p>
-<pre><code>      图1
-         
-         
-</code></pre>
-<p>没错，计算机中的时间戳正是从这时候开始以秒为单位递增的。点击<strong>Next</strong>从<strong>url</strong>中可以看到是通过<strong>GET方式</strong>提交变量实现页面跳转的。因此只要查询到比赛时间段内的时间戳，以GET方式提交就可以拿到flag。linux中查询指定时间点的方式：</p>
-<pre class="highlight"><code class="hljs shell">date -d &quot;2021-10-29 19:45:44&quot; +%s<br></code></pre>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/IldPLq"><img src="https://z3.ax1x.com/2021/11/07/IldPLq.png" alt="IldPLq.png" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://z3.ax1x.com/2021/11/07/IldPLq.png" class="lozad post-image"></a></p>
+<p>没错，计算机中的时间戳正是从这时候开始以秒为单位递增的。点击<strong>Next</strong>从<strong>url</strong>中可以看到是通过<strong>GET方式</strong>提交变量实现页面跳转的。因此只要查询到比赛时间段内的时间戳，以GET方式提交就可以拿到flag。linux中查询指定时间点的方式：<br><pre class="highlight"><code class="hljs shell">date -d &quot;2021-10-29 19:45:44&quot; +%s<br></code></pre></p>
 <h1 id="进制十六——参上"><a href="#进制十六——参上" class="headerlink" title="进制十六——参上"></a>进制十六——参上</h1><blockquote>
 <p>为严防 flag 泄漏以及其他存在于未来所有可能的意外灾难，神通广大的 Z 同学不仅强制要求每一道题目都加上权限和资源的限制，还给所有参与 Hackergame 2021 命题的计算机施加了一层法术结界。任何试图从结界逃逸的 flag 都会被无情抹除。<br>而一位明面上是计算机学院的新生，实则为物理学院暗部核心成员的 X 同学，在 Hackergame 2021 命题组已经潜伏多时。妄想趁比赛开始的午时，借阳火正旺之势，冲破 Z 同学的结界，以图片而非明文的形式，将 flag 悄悄传递出来。<br>好在 Z 同学法力之深厚，不可管窥蠡测。在 flag 被传出去的前两天，就已预知此事并将图片中的 flag 无声消泯了。<br>只是，这位 X 同学，虽然不会退出 Vim，但是似乎对打开十六进制编辑器颇有造诣……</p>
 </blockquote>
-<p>简单的十六进制转字符串，2行python送走。</p>
-<pre class="highlight"><code class="hljs python"><span class="hljs-built_in">str</span> = <span class="hljs-string">&#x27;20666C61 677B5930 555F5348 30553144 5F6B6E30 775F4830 575F7430 5F43306E 76337274 5F484558 5F746F5F 54657854 7D20466F 72206578&quot;)</span><br><span class="hljs-string">print(bytes.fromhex(str))</span><br></code></pre>
-
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/IldkwV"><img src="https://z3.ax1x.com/2021/11/07/IldkwV.png" alt="IldkwV.png" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://z3.ax1x.com/2021/11/07/IldkwV.png" class="lozad post-image"></a></p>
+<p>简单的十六进制转字符串，2行python送走。<br><pre class="highlight"><code class="hljs python"><span class="hljs-built_in">str</span> = <span class="hljs-string">&#x27;20666C61 677B5930 555F5348 30553144 5F6B6E30 775F4830 575F7430 5F43306E 76337274 5F484558 5F746F5F 54657854 7D20466F 72206578&quot;)</span><br><span class="hljs-string">print(bytes.fromhex(str))</span><br></code></pre></p>
 <h1 id="去吧！追寻自由的电波"><a href="#去吧！追寻自由的电波" class="headerlink" title="去吧！追寻自由的电波"></a>去吧！追寻自由的电波</h1><blockquote>
 <p>为了打破 Z 同学布下的结界，X 同学偷偷搬出社团的业余无线电台试图向外界通讯。<br>当然，如果只是这样还远远不够。遵依史称“老爹”的上古先贤的至理名言，必须要“用魔法打败魔法”。X 同学向上级申请到了科大西区同步辐射实验室设备的使用权限，以此打通次元空间，借助到另一个平行宇宙中 Z 同学的法力进行数据对冲，方才于乱中搏得一丝机会，将 flag 用无线电的形式发射了出去。<br>考虑到信息的鲁棒性，X 同学使用了无线电中惯用的方法来区分字符串中读音相近的字母。即使如此，打破次元的强大能量扭曲了时空，使得最终接受到的录音的速度有所改变。<br>为了保障同步辐射设备的持续运转，组织牺牲了大量的能源，甚至以东北部分地区无计划限电为代价，把这份沉甸甸的录音文件送到了你的手上。而刚刚起床没多久，试图抢签到题一血还失败了的你，可以不辜负同学们对你的殷切期望吗？</p>
 </blockquote>
-<p><em><strong>此处插入在线音频播放插件</strong></em></p>
+<p><a target="_blank" rel="noopener" href="https://gitee.com/Scripter_doge/hackergame2021-writeups/raw/master/official/%E5%8E%BB%E5%90%A7%EF%BC%81%E8%BF%BD%E5%AF%BB%E8%87%AA%E7%94%B1%E7%9A%84%E7%94%B5%E6%B3%A2/src/radio.mp3">戳我—-》下载音频</a></p>
 <p>可以确定的是录音中的声音出自于人类，只是由于音频播放速度太快，导致无法听清。这里使用<strong>potplay</strong>打开音频调至0.2倍速，降低采样率至原来的一半，音频就不会出现音速太快，音调过高，导致无法听清。同时根据题目暗示，可以查找<code>无线电字母通信发音</code>,根据<strong>NATO</strong>的读法可以顺利拼出flag。</p>
-<h1 id="猫咪问答-Pro-Max"><a href="#猫咪问答-Pro-Max" class="headerlink" title="猫咪问答 Pro Max"></a>猫咪问答 Pro Max</h1><p>猫咪问答图1</p>
-<p>首先看第一题，通过360搜索  <code>ustc@sec 社团章程</code> 很顺利的找到了社团早期的qq群号和当时负责人的联系方式，<del>于是我们只要联系负责人就能得到当时的社团章程信息。</del> 好吧，其实这里我是用burpsuite的爆破试出来的，利用python生成含有07年到15年的每一天的字典，之后导入 <strong>burpsuite</strong> 就可以了。</p>
-<pre class="highlight"><code class="hljs python"><span class="hljs-keyword">import</span> datetime<br><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np<br><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">create_assist_date</span>(<span class="hljs-params">datestart = <span class="hljs-literal">None</span>,dateend = <span class="hljs-literal">None</span></span>):</span><br>	datestart=datetime.datetime.strptime(datestart,<span class="hljs-string">&#x27;%Y%m%d&#x27;</span>)<br>	dateend=datetime.datetime.strptime(dateend,<span class="hljs-string">&#x27;%Y%m%d&#x27;</span>)<br>	date_list = []<br>	date_list.append(datestart.strftime(<span class="hljs-string">&#x27;%Y%m%d&#x27;</span>))<br>	<span class="hljs-keyword">while</span> datestart&lt;dateend:<br>	    datestart+=datetime.timedelta(days=+<span class="hljs-number">1</span>)<br>	    date_list.append(datestart.strftime(<span class="hljs-string">&#x27;%Y%m%d&#x27;</span>))<br>	<span class="hljs-built_in">print</span>(date_list)<br>	<span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">&quot;word.txt&quot;</span>, <span class="hljs-string">&#x27;w&#x27;</span>) <span class="hljs-keyword">as</span> f:<br>        	<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-built_in">len</span>(date_list)):<br>            		f.write(date_list[i] + <span class="hljs-string">&#x27;\n&#x27;</span>)<br><br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&#x27;__main__&#x27;</span>:<br>	create_assist_date(<span class="hljs-string">&quot;20070101&quot;</span>,<span class="hljs-string">&quot;20150101&quot;</span>)<br></code></pre>
-<p>关于第一题，后来我了解到可以在搜索引擎中搜 <code>&quot;sec.ustc.edu.cn&quot;</code> （带双引号）,找到网站的 <strong>Web Archive</strong>, 不失为一个小技巧。 </p>
+<h1 id="猫咪问答-Pro-Max"><a href="#猫咪问答-Pro-Max" class="headerlink" title="猫咪问答 Pro Max"></a>猫咪问答 Pro Max</h1><p><a target="_blank" rel="noopener" href="https://imgtu.com/i/IlaxJg"><img src="https://z3.ax1x.com/2021/11/07/IlaxJg.png" alt="IlaxJg.png" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://z3.ax1x.com/2021/11/07/IlaxJg.png" class="lozad post-image"></a></p>
+<p>首先看第一题，通过360搜索  <code>ustc@sec 社团章程</code> 很顺利的找到了社团早期的qq群号和当时负责人的联系方式，<del>于是我们只要联系负责人就能得到当时的社团章程信息。</del> 好吧，其实这里我是用burpsuite的爆破试出来的，利用python生成含有07年到15年的每一天的字典，之后导入 <strong>burpsuite</strong> 爆破就可以了。<br><pre class="highlight"><code class="hljs python"><span class="hljs-keyword">import</span> datetime<br><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np<br><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">create_assist_date</span>(<span class="hljs-params">datestart = <span class="hljs-literal">None</span>,dateend = <span class="hljs-literal">None</span></span>):</span><br>	datestart=datetime.datetime.strptime(datestart,<span class="hljs-string">&#x27;%Y%m%d&#x27;</span>)<br>	dateend=datetime.datetime.strptime(dateend,<span class="hljs-string">&#x27;%Y%m%d&#x27;</span>)<br>	date_list = []<br>	date_list.append(datestart.strftime(<span class="hljs-string">&#x27;%Y%m%d&#x27;</span>))<br>	<span class="hljs-keyword">while</span> datestart&lt;dateend:<br>	    datestart+=datetime.timedelta(days=+<span class="hljs-number">1</span>)<br>	    date_list.append(datestart.strftime(<span class="hljs-string">&#x27;%Y%m%d&#x27;</span>))<br>	<span class="hljs-built_in">print</span>(date_list)<br>	<span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">&quot;word.txt&quot;</span>, <span class="hljs-string">&#x27;w&#x27;</span>) <span class="hljs-keyword">as</span> f:<br>        	<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-built_in">len</span>(date_list)):<br>            		f.write(date_list[i] + <span class="hljs-string">&#x27;\n&#x27;</span>)<br><br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&#x27;__main__&#x27;</span>:<br>	create_assist_date(<span class="hljs-string">&quot;20070101&quot;</span>,<span class="hljs-string">&quot;20150101&quot;</span>)<br></code></pre><br>关于第一题，后来我了解到可以在搜索引擎中搜 <code>&quot;sec.ustc.edu.cn&quot;</code> （带双引号）,找到网站的 <strong>Web Archive</strong>, 不失为一个小技巧。 </p>
 <p>第二题，LUG这般优秀的社团组织，必然是年年都能拿到五星的吧。这里还是放个公众号链接吧。<a target="_blank" rel="noopener" href="https://zsb.ustc.edu.cn/2021/0928/c12990a524155/pagem.htm">USTCLUG 的介绍页</a>。看到更新日期是2021年5月20日，以往社团评选的结果会在7月份后发布，所以这里还要寻找2021年的USTC五星社团信息。这里搜索 <code>2021 中国科大 五星级社团</code> 就会在图片中找到USTCLUG的身影。</p>
 <p>第三题在LUG的<a target="_blank" rel="noopener" href="https://lug.ustc.edu.cn/">官网</a>搜索 <code>活动室</code> 便能找到 <a target="_blank" rel="noopener" href="https://ftp.lug.ustc.edu.cn/wp-content/uploads/2016/06/IMG_20160616_133655_compressed.jpg">门口牌子的图片</a>。第四题和第五题找到对应的文档后也是极其easy的，这里不做过多陈述。</p>
 <h1 id="卖瓜"><a href="#卖瓜" class="headerlink" title="卖瓜"></a>卖瓜</h1><blockquote>
@@ -333,19 +329,19 @@
 <p>（你开始选瓜称重）</p>
 <p>补充说明：当称的数字变为浮点数而不是整数时，HQ 不会认可最终的称重结果。</p>
 </blockquote>
-<p>题图1</p>
-<p>溢出就完事</p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/IldDTf"><img src="https://z3.ax1x.com/2021/11/07/IldDTf.png" alt="IldDTf.png" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://z3.ax1x.com/2021/11/07/IldDTf.png" class="lozad post-image"></a></p>
+<p>burp抓包改变量，溢出就完事。</p>
 <h1 id="透明的文件"><a href="#透明的文件" class="headerlink" title="透明的文件"></a>透明的文件</h1><blockquote>
 <p>一个透明的文件，用于在终端中展示一个五颜六色的 flag。可能是在 cmd.exe 等劣质终端中被长期使用的原因，这个文件失去了一些重要成分，变成了一堆乱码，也不会再显示出 flag 了。注意：flag 内部的字符全部为小写字母。</p>
 </blockquote>
-<p>图 1</p>
-<p>类似乱码的东西叫 ANSI escape sequence，或是 VT100 escape codes。开一个“优质”终端，在所有 ‘[‘ 前面加上 ESC，并把所有空格替换为会被显示的字符。具体做法可以直接使用记事本或word中的全部替换，也可以在linux中使用如下正则匹配命令：</p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/Ild400"><img src="https://z3.ax1x.com/2021/11/07/Ild400.png" alt="Ild400.png" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://z3.ax1x.com/2021/11/07/Ild400.png" class="lozad post-image"></a><br><a href="">文件下载链接</a></p>
+<p>乍看起来，好像是一堆杂乱的、无厘头的字符，实际上了解ANSI编码的同学应该知道，在终端中就是通过这样的转义字符实现终端诸如字符颜色变化、指针跳跃等个性化操作，不熟悉的同学可以看看这个 <a target="_blank" rel="noopener" href="https://blog.csdn.net/daoer_sofu/article/details/102456935">链接</a>。类似乱码的东西叫 ANSI escape sequence，或是 VT100 escape codes。开一个“优质”终端，在所有 ‘[‘ 前面加上 ESC，并把所有空格替换为会被显示的字符。具体做法可以直接使用记事本或word中的全部替换，也可以在linux中使用如下正则匹配命令：</p>
 <p><code>cat transparent.txt | sed &#39;s/\[/\x1b[/g&#39; | sed &#39;s/ /#/g&#39;</code></p>
-<p>结果图2</p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/Ilw8un"><img src="https://z3.ax1x.com/2021/11/07/Ilw8un.png" alt="Ilw8un.png" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://z3.ax1x.com/2021/11/07/Ilw8un.png" class="lozad post-image"></a></p>
 <h1 id="旅行照片"><a href="#旅行照片" class="headerlink" title="旅行照片"></a>旅行照片</h1><blockquote>
 <p>你的学长决定来一场说走就走的旅行。通过他发给你的照片来看，他应该是在酒店住下了。从照片来看，酒店似乎在小区的一栋高楼里，附近还有一家 KFC 分店。突然，你意识到照片里透露出来的信息比表面上看起来的要多。请观察照片并答对全部 5 道题以获取 flag。注意：图片未在其他地方公开发布过，也未采取任何隐写措施（通过手机拍摄屏幕亦可答题）。</p>
 </blockquote>
-<p>题目图片</p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/IlwgUK"><img src="https://z3.ax1x.com/2021/11/07/IlwgUK.png" alt="IlwgUK.png" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://z3.ax1x.com/2021/11/07/IlwgUK.png" class="lozad post-image"></a></p>
 <p>此题是一道明显的社工题，在于提醒各位注意位置隐私的同学不要随便发图片给陌生人看。从图片上可以明显看到一家蓝色装修风格的肯德基和沙滩。简单百度以下这样的KFC全国只有一家，在秦皇岛，这里是<a target="_blank" rel="noopener" href="https://www.163.com/dy/article/GCMIA8I205249VIU.html">链接</a>。接下来打开百度街景，定位到秦皇岛新澳海底世界便能解决1、4、5题。第二题拍摄时间的问题可以从影子的朝向大致推断出来。至于拍摄者的楼层，这里我是试出来的。官方的题解是这么说的：</p>
 <p>照片上方有一处较为明显的天地交界线（较深和较浅蓝色的分界线），这条线对应的是水平面，换言之，照片上落在这条线上的所有点，其海拔高度均和拍摄者相同。那么通过照片右侧的建筑可以数出来对面高楼的 14 楼和拍摄者处于同一高度下。再根据「小区内每栋楼的层高和海拔均相同」，可推得拍摄者位于 14 楼。</p>
 <h1 id="Flag助力大红包"><a href="#Flag助力大红包" class="headerlink" title="Flag助力大红包"></a>Flag助力大红包</h1><blockquote>
@@ -355,7 +351,7 @@
 <p>“那怎么才能参加呢？”</p>
 <p>“这还不简单！点击下面的链接就行”</p>
 </blockquote>
-<p>题图</p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/IlavFS"><img src="https://z3.ax1x.com/2021/11/07/IlavFS.png" alt="IlavFS.png" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://z3.ax1x.com/2021/11/07/IlavFS.png" class="lozad post-image"></a><br><a target="_blank" rel="noopener" href="https://imgtu.com/i/IlazWQ"><img src="https://z3.ax1x.com/2021/11/07/IlazWQ.png" alt="IlazWQ.png" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://z3.ax1x.com/2021/11/07/IlazWQ.png" class="lozad post-image"></a></p>
 <p>应当可以很容易发现，用户通过点击助力按钮，即可积攒 Flag 。但是题目写出会对源地址进行检查， 位于同一个 /8 网络内的用户只能助力一次。（一个 /8 网段内的所有 IP 地址的第一个字节是相同的。很容易可以知道， IPv4 中至多只有 256 个 /8 网段。</p>
 <p>其实，如果对 Flag 数量进行多项式拟合，可以发现 flag 数量为一精确的二次函数：</p>
 <p><code>flag = (-0.0000076*(count-256)^2+1)</code></p>
@@ -371,20 +367,17 @@
 </ol>
 <p>详细信息可以参考<a target="_blank" rel="noopener" href="https://datatracker.ietf.org/doc/html/rfc3330">RFC3330</a></p>
 <p>因此，我们需要伪造 IPv4 源地址的方式来欺骗服务器地址。事实上，服务器通过两种手段来检测远程 IP 地址。首先是通过调用搜狐的接口<code>https://pv.sohu.com/cityjson?ie=utf-8</code>来识别远程地址。并将识别的远程地址通过表单中的 ip 字段传送给服务器。</p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/IlaLeP"><img src="https://z3.ax1x.com/2021/11/07/IlaLeP.png" alt="IlaLeP.png" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://z3.ax1x.com/2021/11/07/IlaLeP.png" class="lozad post-image"></a></p>
 <p>第二个手段是服务器的检测方式。这里，服务器存在 <strong>X-Forwarded-For</strong> 欺骗漏洞。 <strong>X-Forwarded-For</strong> 是一个扩展的 HTTP 头标，通常由反向代理服务器（如 Nginx ）在转发 HTTP 协议时添加。这是因为代理服务器在进行转发时，后端服务器接收到的 TCP/IP 协议的源地址将是代理服务器的地址，而不是远程客户的地址。中转服务器通过这一头标来保留远程地址这一信息。然而，这一头标是不被认证且很容易被伪造的，因此可用构造出任意远程地址。另一个相似功能的头标是 <strong>X-Remote-IP</strong>。事实上，本文题目服务器对这两个头标均存在识别漏洞。 <strong>X-Forwarded-For</strong> 的格式非常简单，只需要将源地址的 IP 地址记录其中即可。当存在多个中转服务器的时候，后续中转服务器会将自己的地址写在该头标的末尾，并使用逗号进行分割。</p>
-<p>综上，我们可用构造出用于伪造攻击的脚本如下:</p>
-<pre class="highlight"><code class="hljs python"><span class="hljs-keyword">import</span> requests<br><span class="hljs-keyword">import</span> time<br>count = <span class="hljs-number">0</span><br><span class="hljs-keyword">while</span> (count &lt; <span class="hljs-number">256</span>):<br>    url = <span class="hljs-string">&#x27;&lt;YOUR TARGET URL&gt;&#x27;</span><br>    session=session = requests.session()<br>    session.headers.update(&#123;<span class="hljs-string">&#x27;X-Forwarded-For&#x27;</span>:<span class="hljs-built_in">str</span>(count)+<span class="hljs-string">&#x27;.200.174.11&#x27;</span>, <span class="hljs-string">&#x27;content-type&#x27;</span>:<span class="hljs-string">&#x27;application/x-www-form-urlencoded&#x27;</span>&#125;)<br>    ip = &#123;<span class="hljs-string">&quot;ip&quot;</span>:<span class="hljs-built_in">str</span>(count)+<span class="hljs-string">&#x27;.200.174.11&#x27;</span>&#125;<br>    result = session.post(url,ip)<br>    count = count + <span class="hljs-number">1</span><br>    <span class="hljs-built_in">print</span>(result.text)<br>    time.sleep(<span class="hljs-number">2</span>)<br><br></code></pre>
-<p>注意到本题为了防止 DoS 攻击，实现了一个简单的令牌桶流量控制算法，因此需要控制请求发送速率。</p>
-<h1 id="Easy-RSA"><a href="#Easy-RSA" class="headerlink" title="Easy RSA"></a>Easy RSA</h1><blockquote>
-<p>自从 Hackergame 2018 公然揭露了大整数可以被神童口算分解的事实，RSA 在 hackergame 中已经只能处于低分值的地位了。如果不在其名称前面加上 Easy 这个单词，似乎就会显得完全对不起其他题目。</p>
-<p>更何况，在本题的附件中，你还获得了构造 p 和 q 的方式。数理基础扎实的你应该可以轻松解决这些问题吧。</p>
+<p>综上，我们可用构造出用于伪造攻击的脚本如下:<br><pre class="highlight"><code class="hljs python"><span class="hljs-keyword">import</span> requests<br><span class="hljs-keyword">import</span> time<br>count = <span class="hljs-number">0</span><br><span class="hljs-keyword">while</span> (count &lt; <span class="hljs-number">256</span>):<br>    url = <span class="hljs-string">&#x27;&lt;YOUR TARGET URL&gt;&#x27;</span><br>    session=session = requests.session()<br>    session.headers.update(&#123;<span class="hljs-string">&#x27;X-Forwarded-For&#x27;</span>:<span class="hljs-built_in">str</span>(count)+<span class="hljs-string">&#x27;.200.174.11&#x27;</span>, <span class="hljs-string">&#x27;content-type&#x27;</span>:<span class="hljs-string">&#x27;application/x-www-form-urlencoded&#x27;</span>&#125;)<br>    ip = &#123;<span class="hljs-string">&quot;ip&quot;</span>:<span class="hljs-built_in">str</span>(count)+<span class="hljs-string">&#x27;.200.174.11&#x27;</span>&#125;<br>    result = session.post(url,ip)<br>    count = count + <span class="hljs-number">1</span><br>    <span class="hljs-built_in">print</span>(result.text)<br>    time.sleep(<span class="hljs-number">2</span>)<br><br></code></pre><br>注意到本题为了防止 DoS 攻击，实现了一个简单的令牌桶流量控制算法，因此需要控制请求发送速率。</p>
+<h1 id="Amnesia"><a href="#Amnesia" class="headerlink" title="Amnesia"></a>Amnesia</h1><blockquote>
+<p>你的程序只需要输出字符串 Hello, world!（结尾有无换行均可）并正常结束。</p>
+<p>编译指令：gcc -O file.c -m32</p>
+<p>运行指令：./a.out<br>编译后 ELF 文件的 .data 和 .rodata 段会被清零。</p>
 </blockquote>
-<p><a href="">文件下载链接</a></p>
-<p>文件中的代码如下：</p>
-<pre class="highlight"><code class="hljs python"><span class="hljs-keyword">import</span> math<br><span class="hljs-keyword">import</span> sympy<br><span class="hljs-keyword">from</span> Crypto.Util.number <span class="hljs-keyword">import</span> *<br><br>e = <span class="hljs-number">65537</span><br><br><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_p</span>():</span><br>    x = <span class="hljs-number">11124440021748127159092076861405454814981575144744508857178576572929321435002942998531420985771090167262256877805902135304112271641074498386662361391760451</span><br>    y = <span class="hljs-number">11124440021748127159092076861405454814981575144744508857178576572929321435002942998531420985771090167262256877805902135304112271641074498386662361391661439</span><br>    value_p = sympy.nextprime((math.factorial(y)) % x)  <span class="hljs-comment"># Hint：这里直接计算会溢出，请你仔细观察 x 和 y 的特征</span><br>    <span class="hljs-keyword">return</span> value_p<br><br><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_q</span>():</span><br>    value = [getPrime(<span class="hljs-number">256</span>)]<br>    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">1</span>, <span class="hljs-number">10</span>):<br>        value.append(sympy.nextprime(value[i - <span class="hljs-number">1</span>]))<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;value[-1] = &quot;</span>, value[-<span class="hljs-number">1</span>])<br>    <span class="hljs-comment"># value[-1] = 80096058210213458444437404275177554701604739094679033012396452382975889905967</span><br>    n = <span class="hljs-number">1</span><br>    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">10</span>):<br>        n = n * value[i]<br>    q = getPrime(<span class="hljs-number">512</span>)<br>    value_q = <span class="hljs-built_in">pow</span>(q, e, n)<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;value_q = &quot;</span>, value_q)<br>    <span class="hljs-comment"># value_q = 5591130088089053683141520294620171646179623062803708281023766040254675625012293743465254007970358536660934858789388093688621793201658889399155357407224541324547522479617669812322262372851929223461622559971534394847970366311206823328200747893961649255426063204482192349202005330622561575868946656570678176047822163692259375233925446556338917358118222905050574458037965803154233167594946713038301249145097770337253930655681648299249481985768272321820718607757023350742647019762122572886601905212830744868048802864679734428398229280780215896045509020793530842541217790352661324630048261329493088812057300480085895399922301827190211956061083460036781018660201163819104150988531352228650991733072010425499238731811243310625701946882701082178190402011133439065106720309788819</span><br>    <span class="hljs-keyword">return</span> sympy.nextprime(q)<br><br><span class="hljs-comment"># this destroyes the rsa cryptosystem</span><br>p = get_p()<br>q = get_q()<br><br>m = <span class="hljs-built_in">int</span>.from_bytes(<span class="hljs-built_in">open</span>(<span class="hljs-string">&quot;flag.txt&quot;</span>, <span class="hljs-string">&quot;rb&quot;</span>).read(), <span class="hljs-string">&quot;big&quot;</span>)<br>c = <span class="hljs-built_in">pow</span>(m, e, p * q)<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;c = &quot;</span>, c)<br><span class="hljs-comment"># c = 110644875422336073350488613774418819991169603750711465190260581119043921549811353108399064284589038384540018965816137286856268590507418636799746759551009749004176545414118128330198437101472882906564195341277423007542422286760940374859966152871273887950174522820162832774361714668826122465471705166574184367478</span><br></code></pre>
-<p>本题目主要使用到 Wilson 定理与 Euler 定理分别求解 p 和 q 。</p>
-<p><strong>p 的求解</strong></p>
-<p>通过题目描述可以看出，p 为 y 的阶乘模 x ，但由于 y 数值过大，直接求解会溢出。可以发现，x 为质数，并且 y 与 x 数值十分接近。 考虑使用 Wilson 定理：p 为素数时，满足：<code>(p-1)! = -1 mod p</code></p>
+<p>真是如题目所描述的那般健忘啊！elf文件又称为可执行程序文件，源程序经过编译、链接后即生成elf，elf的组成部分可参考 <a target="_blank" rel="noopener" href="https://ctf-wiki.org/executable/elf/structure/basic-info/">ctfwiki</a> 。</p>
+<p>我的思路是：待输出的字符串必定会存放在<code>.text</code>代码段，通过在程序运行时动态申请一片内存空间来存储这段字符串，由于程序运行时所申请的动态空间属于栈或堆，故其不会被删除。<br><pre class="highlight"><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;string.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdlib.h&gt;</span></span><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">char</span> *p;<br>    p = (<span class="hljs-keyword">char</span> *)<span class="hljs-built_in">malloc</span>(<span class="hljs-built_in"><span class="hljs-keyword">sizeof</span></span>(<span class="hljs-keyword">char</span>)*<span class="hljs-number">20</span>);<br>    <span class="hljs-built_in">strcpy</span>(p, <span class="hljs-string">&quot;Hello, world!&quot;</span>); <br>    <span class="hljs-built_in">printf</span>(p);<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br><br></code></pre><br><a target="_blank" rel="noopener" href="https://imgtu.com/i/IlwIKA"><img src="https://z3.ax1x.com/2021/11/07/IlwIKA.png" alt="IlwIKA.png" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://z3.ax1x.com/2021/11/07/IlwIKA.png" class="lozad post-image"></a></p>
+<p>最近看了很多其他人的博客，总觉得自己的博客过于简陋了，十分影响最终的文字呈现效果。下周打算花点时间重新装修以下我这毛胚房，下下周我再来更新吧。</p>
 
   </div>
   <div>
@@ -477,7 +470,7 @@
     style="padding-right: 2px;">
   </i>目录
 </div>
-<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AD%BE%E5%88%B0"><span class="toc-text">签到</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BF%9B%E5%88%B6%E5%8D%81%E5%85%AD%E2%80%94%E2%80%94%E5%8F%82%E4%B8%8A"><span class="toc-text">进制十六——参上</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8E%BB%E5%90%A7%EF%BC%81%E8%BF%BD%E5%AF%BB%E8%87%AA%E7%94%B1%E7%9A%84%E7%94%B5%E6%B3%A2"><span class="toc-text">去吧！追寻自由的电波</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%8C%AB%E5%92%AA%E9%97%AE%E7%AD%94-Pro-Max"><span class="toc-text">猫咪问答 Pro Max</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8D%96%E7%93%9C"><span class="toc-text">卖瓜</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%80%8F%E6%98%8E%E7%9A%84%E6%96%87%E4%BB%B6"><span class="toc-text">透明的文件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%97%85%E8%A1%8C%E7%85%A7%E7%89%87"><span class="toc-text">旅行照片</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Flag%E5%8A%A9%E5%8A%9B%E5%A4%A7%E7%BA%A2%E5%8C%85"><span class="toc-text">Flag助力大红包</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Easy-RSA"><span class="toc-text">Easy RSA</span></a></li></ol>
+<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AD%BE%E5%88%B0"><span class="toc-text">签到</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BF%9B%E5%88%B6%E5%8D%81%E5%85%AD%E2%80%94%E2%80%94%E5%8F%82%E4%B8%8A"><span class="toc-text">进制十六——参上</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8E%BB%E5%90%A7%EF%BC%81%E8%BF%BD%E5%AF%BB%E8%87%AA%E7%94%B1%E7%9A%84%E7%94%B5%E6%B3%A2"><span class="toc-text">去吧！追寻自由的电波</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%8C%AB%E5%92%AA%E9%97%AE%E7%AD%94-Pro-Max"><span class="toc-text">猫咪问答 Pro Max</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8D%96%E7%93%9C"><span class="toc-text">卖瓜</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%80%8F%E6%98%8E%E7%9A%84%E6%96%87%E4%BB%B6"><span class="toc-text">透明的文件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%97%85%E8%A1%8C%E7%85%A7%E7%89%87"><span class="toc-text">旅行照片</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Flag%E5%8A%A9%E5%8A%9B%E5%A4%A7%E7%BA%A2%E5%8C%85"><span class="toc-text">Flag助力大红包</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Amnesia"><span class="toc-text">Amnesia</span></a></li></ol>
 </div></main>
             <aside class="left-column">
               
@@ -553,7 +546,7 @@
     style="padding-right: 2px;">
   </i>目录
 </div>
-<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AD%BE%E5%88%B0"><span class="toc-text">签到</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BF%9B%E5%88%B6%E5%8D%81%E5%85%AD%E2%80%94%E2%80%94%E5%8F%82%E4%B8%8A"><span class="toc-text">进制十六——参上</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8E%BB%E5%90%A7%EF%BC%81%E8%BF%BD%E5%AF%BB%E8%87%AA%E7%94%B1%E7%9A%84%E7%94%B5%E6%B3%A2"><span class="toc-text">去吧！追寻自由的电波</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%8C%AB%E5%92%AA%E9%97%AE%E7%AD%94-Pro-Max"><span class="toc-text">猫咪问答 Pro Max</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8D%96%E7%93%9C"><span class="toc-text">卖瓜</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%80%8F%E6%98%8E%E7%9A%84%E6%96%87%E4%BB%B6"><span class="toc-text">透明的文件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%97%85%E8%A1%8C%E7%85%A7%E7%89%87"><span class="toc-text">旅行照片</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Flag%E5%8A%A9%E5%8A%9B%E5%A4%A7%E7%BA%A2%E5%8C%85"><span class="toc-text">Flag助力大红包</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Easy-RSA"><span class="toc-text">Easy RSA</span></a></li></ol>
+<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AD%BE%E5%88%B0"><span class="toc-text">签到</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BF%9B%E5%88%B6%E5%8D%81%E5%85%AD%E2%80%94%E2%80%94%E5%8F%82%E4%B8%8A"><span class="toc-text">进制十六——参上</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8E%BB%E5%90%A7%EF%BC%81%E8%BF%BD%E5%AF%BB%E8%87%AA%E7%94%B1%E7%9A%84%E7%94%B5%E6%B3%A2"><span class="toc-text">去吧！追寻自由的电波</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%8C%AB%E5%92%AA%E9%97%AE%E7%AD%94-Pro-Max"><span class="toc-text">猫咪问答 Pro Max</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8D%96%E7%93%9C"><span class="toc-text">卖瓜</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%80%8F%E6%98%8E%E7%9A%84%E6%96%87%E4%BB%B6"><span class="toc-text">透明的文件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%97%85%E8%A1%8C%E7%85%A7%E7%89%87"><span class="toc-text">旅行照片</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Flag%E5%8A%A9%E5%8A%9B%E5%A4%A7%E7%BA%A2%E5%8C%85"><span class="toc-text">Flag助力大红包</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Amnesia"><span class="toc-text">Amnesia</span></a></li></ol>
       </div>
     </article>
   
@@ -606,7 +599,7 @@
     style="padding-right: 2px;">
   </i>目录
 </div>
-<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AD%BE%E5%88%B0"><span class="toc-text">签到</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BF%9B%E5%88%B6%E5%8D%81%E5%85%AD%E2%80%94%E2%80%94%E5%8F%82%E4%B8%8A"><span class="toc-text">进制十六——参上</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8E%BB%E5%90%A7%EF%BC%81%E8%BF%BD%E5%AF%BB%E8%87%AA%E7%94%B1%E7%9A%84%E7%94%B5%E6%B3%A2"><span class="toc-text">去吧！追寻自由的电波</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%8C%AB%E5%92%AA%E9%97%AE%E7%AD%94-Pro-Max"><span class="toc-text">猫咪问答 Pro Max</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8D%96%E7%93%9C"><span class="toc-text">卖瓜</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%80%8F%E6%98%8E%E7%9A%84%E6%96%87%E4%BB%B6"><span class="toc-text">透明的文件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%97%85%E8%A1%8C%E7%85%A7%E7%89%87"><span class="toc-text">旅行照片</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Flag%E5%8A%A9%E5%8A%9B%E5%A4%A7%E7%BA%A2%E5%8C%85"><span class="toc-text">Flag助力大红包</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Easy-RSA"><span class="toc-text">Easy RSA</span></a></li></ol>
+<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AD%BE%E5%88%B0"><span class="toc-text">签到</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BF%9B%E5%88%B6%E5%8D%81%E5%85%AD%E2%80%94%E2%80%94%E5%8F%82%E4%B8%8A"><span class="toc-text">进制十六——参上</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8E%BB%E5%90%A7%EF%BC%81%E8%BF%BD%E5%AF%BB%E8%87%AA%E7%94%B1%E7%9A%84%E7%94%B5%E6%B3%A2"><span class="toc-text">去吧！追寻自由的电波</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%8C%AB%E5%92%AA%E9%97%AE%E7%AD%94-Pro-Max"><span class="toc-text">猫咪问答 Pro Max</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8D%96%E7%93%9C"><span class="toc-text">卖瓜</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%80%8F%E6%98%8E%E7%9A%84%E6%96%87%E4%BB%B6"><span class="toc-text">透明的文件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%97%85%E8%A1%8C%E7%85%A7%E7%89%87"><span class="toc-text">旅行照片</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Flag%E5%8A%A9%E5%8A%9B%E5%A4%A7%E7%BA%A2%E5%8C%85"><span class="toc-text">Flag助力大红包</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Amnesia"><span class="toc-text">Amnesia</span></a></li></ol>
     </article>
   
   
@@ -622,7 +615,7 @@
     
       <div class="recent-posts-item">
         <div class="recent-posts-item-title">2021-10-31</div>
-        <a href="/2021/10/31/Hackergame-2021-wp/"><div class="recent-posts-item-content">Hackergame_2021_wp</div></a>
+        <a href="/2021/10/31/Hackergame-2021-wp/"><div class="recent-posts-item-content">Hackergame_2021_wp (一)</div></a>
       </div>
     
       <div class="recent-posts-item">
@@ -728,6 +721,23 @@
   <i class="iconfont icon-search button-icon"></i>
 </a> 
      
+     
+      
+
+  
+  
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        }
+      };
+    </script>
+    
+<script src="//cdn.jsdelivr.net/npm/mathjax@3.0.5/es5/tex-svg.js"></script>
+
+  
+ 
      
      
       <script>
